@@ -47,3 +47,28 @@ class MyApp extends StatelessWidget {
 - 그것이 바로 MaterialApp이라는 위젯이다. => 실질적으로 모든 위젯을 감싸고 있다.
 - primarySwatch는 견본을 의미하고, 여기서는 앱에서 기본적으로 사용할 테마색상을 의미한다. 
 - home은 앱이 정상적으로 실행되었을 때 실행되는 경로이다. home: MyHomePage(), 이렇게 지정되면, 앱이 실행될 때 MyHomePage() 내용을 가장 먼저 보여주게 될것이다.
+
+## 위에 이어서 코드 설명
+```dart
+class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('First App'),
+      ),
+      body: Center( // 내용들을 중간 정렬한다는 것을 의미
+        child: Column( // 모든 내용들을 세로로 정렬하여 배치한다는 의미
+          children: const [
+            Text('HELLO'), // 새로로 배치되는 것들
+            Text('HELLO'),
+            Text('HELLO'),
+          ],
+        ),
+      ),
+    );
+  }
+}
+```
