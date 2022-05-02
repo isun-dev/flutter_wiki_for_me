@@ -13,4 +13,36 @@
 
 ## 에디터에서 작성할 때 꿀팁
 ### stl만 입력하면 statelesswidget을 만들 수 있다. 
+### build함수
 - 모든 커스텀 위젯은 또 다른 위젯을 리턴하는 build() 라는 함수를 가지고 있다. 
+- 그래서 아래와 같이 MyApp 위젯은 Container()이라는 위젯을 리턴하고 있다.
+```dart
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+```
+### 앱을 디자인 하기 위해서
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(MyApp());
+
+// 앱의 뼈대를 만드는 역할
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+```
+- 위와 같이 기본 틀을 잡아준 후에는 본격적으로 앱을 디자인 해야 한다.
+- flutter/material을 사용해야 하는데, 이것을 사용할 수 있는 기능을 가진 위젯을 사용해야 한다.
+- 그것이 바로 MaterialApp이라는 위젯이다. => 실질적으로 모든 위젯을 감싸고 있다.
+- primarySwatch는 견본을 의미하고, 여기서는 앱에서 기본적으로 사용할 테마색상을 의미한다. 
