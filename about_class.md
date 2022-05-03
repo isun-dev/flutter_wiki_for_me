@@ -57,5 +57,10 @@ class MyPage extends StatelessWidget {
       ),
     );
   }
+
 }
 ```
+
+### ListTile 이란?
+- 리스트가 있을 때, 아래 처럼 빨간색 칸 하나 하나를 리스트 타일이라고 한다.
+- ![스크린샷 2022-05-03 오후 1 36 09](https://user-images.githubusercontent.com/43905552/166405119-72a1bcdd-b815-48da-955d-ee859d6885e3.png)
