@@ -26,3 +26,14 @@ void main(){
   str = "다트"; // 에러
 }
 ```
+### Dart에서 클래스 사용 방법
+- 클래스 내에 생성자가 없으면 인스턴스를 생성할 수 없다.
+- named argument: 클래스내에 생성자가 가지고 있는 {}로 묶어서, 인스턴스를 생성할 때 원하는 필드만 사용할 수 있다.
+- AppBarTheme가 클래스고 그 안에 있는 것들이 named argument 형식으로 사용되고 있다.
+```dart
+appBarTheme: AppBarTheme(
+        backgroundColor: colorScheme.background,
+        elevation: 0,
+        iconTheme: IconThemeData(color: colorScheme.primary),
+      ),
+```
