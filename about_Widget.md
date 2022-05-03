@@ -13,7 +13,7 @@
 - 어떠한 실시간 데이터도 저장하지 않음.
 - 어떤 변화(모양, 상태)를 유발시키는 value값을 가지지 않음.
 
-## Stateful Widgets(일종의 정적 위젯)
+## Stateful Widgets(일종의 동적 위젯)
 - 사용자의 interaction에 따라서 모양이 바뀜.
 
 ## Flutter Widget tree
