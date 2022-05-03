@@ -37,3 +37,25 @@ appBarTheme: AppBarTheme(
         iconTheme: IconThemeData(color: colorScheme.primary),
       ),
 ```
+### leading 속성
+```dart
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('힘찬 식당'),
+        elevation: 0.0,
+        leading: IconButton( // 이 속성은 아이콘을 앱바의 왼쪽에 위치 하도록 해주는 것이고, 꼭 앱바에서만 쓰이는것은 아니다. 
+          icon: const Icon(Icons.menu),
+          onPressed: () {
+            print('버튼클릭');
+          },
+        ),
+      ),
+    );
+  }
+}
+```
