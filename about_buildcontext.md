@@ -83,3 +83,11 @@ class MyPage extends StatelessWidget {
 - 즉 Scaffold 위젯 아래에서 context를 사용해서 위젯 트리상의 Scaffold 위치를 찾아서 올라갈려고 했는데, 정작  Scaffold.of에서 of 메소드가 사용한 context는 MyPage 것이라는 의미이다. 
 - 여기서의 핵심은 build 함수를 불러왔을 때, 그 인자값으로 전달되는 BuildContext는 return 되는 위젯의 것이 아니라, 이 함수를 불러오는 위젯의 BuildContext이다. 여기서는 MyPage가 된다.
 - 이렇게 되면 of()는 위젯 트리상에서 MyPage 위젯의 위치부터 Scaffold를 찾아나서게 된다. 그런데 위로 올라가도 Scaffold를 못찾게 된다. 그래서 위와 같은 에러가 난다.
+
+### 그럼 어떻게 Scaffold.of()가 위젯 트리상에서 Scaffold를 찾게 하려면 어떻게 해야 하는가?
+- Scaffold.of() 가 위젯 트리상에서 Scaffold 보다 밑에 있는 위젯의 context를 사용하게 하면 된다. 
+- 이를 위해서 존재하는 것이 Builder 위젯이다. 
+- Builder 위젯의 핵심적인 역할은 지금까지 사용했던 context가 무엇이었던 간에 다 무시하고 새로운 context로 새로운 위젯을 만들라는 것을 의미한다. 
+- 그래서 Widget 밑에 존재하는 Scaffold.of() 메소드가 MyPage 위젯의 context가 아니라, 이 Builder 위젯의 context를 사용하게 만드는 것이다. 
+- 그래서 결과적으로 Scaffold.of() 메소드가 위젯 트리 상에서 Builder 위로 거슬러 올라면서 Scaffold 위젯을 찾게 된다. 
+- ![스크린샷 2022-05-04 오전 11 16 38](https://user-images.githubusercontent.com/43905552/166614992-58e538ec-bf38-4e9b-baf1-4fb9e2280446.png)
