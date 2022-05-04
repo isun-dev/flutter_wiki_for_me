@@ -14,4 +14,14 @@
 
 - 최종적으로 사용자가 스크린상에서 보는 모든 요소들은 render tree의 작업 결과이다. 
 - flutter는 widget tree가 생성될때마다 생성된다. element tree도 메모리에 등록되어서 flutter에 의해서 관리되는 요소이다. 
-- ![Uploading 스크린샷 2022-05-04 오후 5.44.28.png…]()
+- ![스크린샷 2022-05-04 오후 5 45 32](https://user-images.githubusercontent.com/43905552/166649224-5c1baf72-7501-45b1-ad6b-546080fee196.png)
+
+## Widget tree and Element tree
+- Widget tree는 build 메소드가 호출될때마다 rebuild 된다.
+- reload는 어떤 프레임을 그대로 둔채 부수적인 요소들만 바꾸는 것이다.
+- rebuild는 프레임 전체를 바꿀 때.
+- 그럼 widget tree가 rebuild 될때마다 element tree와 render tree도 rebuild되는가?
+- 이렇게 되면 플러터 성능이 매우 떨어지기 때문에, element tree가 해결을 해준다. element tree는 widget tree에 point 되어 정보를 가지고 있다. 그래서 어떤 위젯에 요소가 추가가 됬을 때, element tree도 rebuild 되는 것이 아닌, 새롭게 생성된 위젯들의 타입과 위치만 일치하면 링크만 업데이트를 한다. 그리고 타입과 위치는 같지만 다시 렌더링이 필요한 부분에 대해 render tree에 정보를 공유하고, render tree는 바뀐 부분만 렌더링을 한다.
+
+### 위젯의 색상이 바뀌었다고 가정했을 때 flow chart
+- ![스크린샷 2022-05-04 오후 5 52 58](https://user-images.githubusercontent.com/43905552/166650425-f3e2b855-0d9a-4275-a98a-292480ba9453.png)
