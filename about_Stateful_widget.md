@@ -13,3 +13,5 @@
 ![스크린샷 2022-05-04 오후 5 39 23](https://user-images.githubusercontent.com/43905552/166648254-1fc3df0f-633a-4a1b-be02-126c75889394.png)
 
 - 최종적으로 사용자가 스크린상에서 보는 모든 요소들은 render tree의 작업 결과이다. 
+- flutter는 widget tree가 생성될때마다 생성된다. element tree도 메모리에 등록되어서 flutter에 의해서 관리되는 요소이다. 
+- ![Uploading 스크린샷 2022-05-04 오후 5.44.28.png…]()
