@@ -91,3 +91,6 @@ class MyPage extends StatelessWidget {
 - 그래서 Widget 밑에 존재하는 Scaffold.of() 메소드가 MyPage 위젯의 context가 아니라, 이 Builder 위젯의 context를 사용하게 만드는 것이다. 
 - 그래서 결과적으로 Scaffold.of() 메소드가 위젯 트리 상에서 Builder 위로 거슬러 올라면서 Scaffold 위젯을 찾게 된다. 
 - ![스크린샷 2022-05-04 오전 11 16 38](https://user-images.githubusercontent.com/43905552/166614992-58e538ec-bf38-4e9b-baf1-4fb9e2280446.png)
+```dart
+body: Builder(builder: (BuildContext ctx) {  },)
+```
