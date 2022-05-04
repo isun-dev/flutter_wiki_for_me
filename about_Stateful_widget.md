@@ -1,3 +1,5 @@
+### 강좌 링크: https://www.youtube.com/watch?v=StvbitxUKSo&list=PLQt_pzi-LLfoOpp3b-pnnLXgYpiFEftLB
+
 # State란?
 - State란 UI가 변경되도록 영향을 미치는 데이터이다.
 - App 수준과 Widget 수준의 데이터가 있다. 
@@ -25,3 +27,6 @@
 
 ### 위젯의 색상이 바뀌었다고 가정했을 때 flow chart
 - ![스크린샷 2022-05-04 오후 5 52 58](https://user-images.githubusercontent.com/43905552/166650425-f3e2b855-0d9a-4275-a98a-292480ba9453.png)
+
+### stateless 위젯은 rebuild만을 통해서 새로운 state 적용 가능.
+### flutter는 초당 60프레임 속도를 지원해서 hot reload 되었을때 매우 빠르게 변경된 결과를 확인할 수 있다.
