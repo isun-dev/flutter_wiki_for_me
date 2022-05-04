@@ -94,3 +94,62 @@ class MyPage extends StatelessWidget {
 ```dart
 body: Builder(builder: (BuildContext ctx) {  },)
 ```
+
+## 위와 같이 코드를 작성하고 나면 더 이상 에러가 나지 않는다.
+```dart
+import 'package:flutter/material.dart';
+
+void main() => runApp(const MyApp());
+
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Appbar',
+      theme: ThemeData(primarySwatch: Colors.red),
+      home: const MyPage(),
+    );
+  }
+}
+
+class MyPage extends StatelessWidget {
+  const MyPage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: const Text('테스트'),
+        ),
+        body: Builder(
+          builder: (BuildContext ctx) {
+            return Center(
+              child: FlatButton(
+                child: const Text(
+                  'Show me',
+                  style: TextStyle(
+                    color: Colors.red,
+                  ),
+                ),
+                onPressed: () {
+                  Scaffold.of(ctx).showSnackBar(const SnackBar(
+                    content: Text('HELLO'),
+                  ));
+                },
+              ),
+            );
+          },
+        ));
+  }
+}
+
+
+```
+## 실행 시 결과 화면
+![스크린샷 2022-05-04 오전 11 30 18](https://user-images.githubusercontent.com/43905552/166615885-79c833dd-5668-4d7f-81e0-0c644126a3b3.png)
+
+# Dart에서 함수의 끝은 무조건 ; 세미콜른으로 끝을 내야 한다.
+
+
