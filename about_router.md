@@ -22,3 +22,43 @@ class MyApp extends StatelessWidget {
 }
 
 ```
+
+## ScreenA.dart 소스
+```dart
+import 'package:flutter/material.dart';
+
+class ScreenA extends StatelessWidget {
+  const ScreenA({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text(
+          '스크린 A',
+          style: TextStyle(fontSize: 24.0),
+        ),
+      ),
+      body: Center(
+          child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          RaisedButton(
+              color: Colors.red,
+              child: const Text('스크린 B로 이동'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/b');
+              }),
+          RaisedButton(
+              color: Colors.amber,
+              child: const Text('스크린 C로 이동'),
+              onPressed: () {
+                Navigator.pushNamed(context, '/c');
+              }),
+        ],
+      )),
+    );
+  }
+}
+
+```
