@@ -54,3 +54,4 @@ void main(){
   showNo(number);
 }
 ```
+![스크린샷 2022-05-04 오후 5 17 40](https://user-images.githubusercontent.com/43905552/166645214-a666c806-64b5-48c9-93a6-6734ed2af3fd.png)
