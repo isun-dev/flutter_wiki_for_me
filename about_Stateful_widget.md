@@ -34,8 +34,11 @@
 # extend
 - 자신의 생성자가 호출될 때, 상속 받은 클래스가 있다면, 부모클래스의 생성자를 먼저 호출하고, 자신의 생성자가 호출된다. 그래서 순차적으로 거슬러 올라가면서 부모클래스 생성자를 먼저 실행하고 본인의 생성자를 실행한다.
 
-# Stateful Widget
+# Stateful Widget과 Stateless Widget 
 ## Stateful Widget과 Stateless Widget의 공통점
 - 두 위젯 모두 생성자를 통해서, 외부에서 데이터가 입력되면 그 결과를 반영하기 위해서 build 메소드가 호출이 되면서, Widget들이 rebuild 되고, 또한 부분의 UI를 리렌더링 하는 것이다. 
 
-## ## Stateful Widget과 Stateless Widget의 차이점
+## Stateful Widget과 Stateless Widget의 차이점
+- 결정적인 차이점은 Stateful Widget은 State라는 클래스를 가지고 있다는 것이다. 두개의 위젯이 결합되어서 Stateful Widget이 만들어 진다.
+
+## 
