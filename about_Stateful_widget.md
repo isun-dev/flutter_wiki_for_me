@@ -16,7 +16,7 @@
 
 - 최종적으로 사용자가 스크린상에서 보는 모든 요소들은 render tree의 작업 결과이다. 
 - flutter는 widget tree가 생성될때마다 생성된다. element tree도 메모리에 등록되어서 flutter에 의해서 관리되는 요소이다. 
-- ![스크린샷 2022-05-04 오후 5 45 32](https://user-images.githubusercontent.com/43905552/166649224-5c1baf72-7501-45b1-ad6b-546080fee196.png)
+![스크린샷 2022-05-04 오후 5 45 32](https://user-images.githubusercontent.com/43905552/166649224-5c1baf72-7501-45b1-ad6b-546080fee196.png)
 
 ## Widget tree and Element tree
 - Widget tree는 build 메소드가 호출될때마다 rebuild 된다.
@@ -26,7 +26,7 @@
 - 이렇게 되면 플러터 성능이 매우 떨어지기 때문에, element tree가 해결을 해준다. element tree는 widget tree에 point 되어 정보를 가지고 있다. 그래서 어떤 위젯에 요소가 추가가 됬을 때, element tree도 rebuild 되는 것이 아닌, 새롭게 생성된 위젯들의 타입과 위치만 일치하면 링크만 업데이트를 한다. 그리고 타입과 위치는 같지만 다시 렌더링이 필요한 부분에 대해 render tree에 정보를 공유하고, render tree는 바뀐 부분만 렌더링을 한다.
 
 ### 위젯의 색상이 바뀌었다고 가정했을 때 flow chart
-- ![스크린샷 2022-05-04 오후 5 52 58](https://user-images.githubusercontent.com/43905552/166650425-f3e2b855-0d9a-4275-a98a-292480ba9453.png)
+![스크린샷 2022-05-04 오후 5 52 58](https://user-images.githubusercontent.com/43905552/166650425-f3e2b855-0d9a-4275-a98a-292480ba9453.png)
 
 ### stateless 위젯은 rebuild만을 통해서 새로운 state 적용 가능.
 ### flutter는 초당 60프레임 속도를 지원해서 hot reload 되었을때 매우 빠르게 변경된 결과를 확인할 수 있다.
@@ -41,4 +41,31 @@
 ## Stateful Widget과 Stateless Widget의 차이점
 - 결정적인 차이점은 Stateful Widget은 State라는 클래스를 가지고 있다는 것이다. 두개의 위젯이 결합되어서 Stateful Widget이 만들어 진다.
 
-## 
+## Stateful Widget
+- Stateful Widget에서 build 메소드는 State 클래스가 가지고 있음. 그래서 UI 를 리렌더링 하는 것은 결국 State 클래스이다. 
+
+### Stateful Widget 이 rebuild 되는 경우
+- child 위젯의 생성자를 통해서 데이터가 전달 될 때.
+- Internal state가 바뀔 때.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
