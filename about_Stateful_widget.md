@@ -48,9 +48,49 @@
 - child 위젯의 생성자를 통해서 데이터가 전달 될 때.
 - Internal state가 바뀔 때.
 
+## Stateful Widget과 State 클래스를 같이 사용하는 이유
+- Stateful Widget의 클래스를 들어가보면 알겠지만, Widget 클래스를 상속하고 있음. 그렇기 때문에 Stateful Widget은 immutable 을 유지하고, State는 mutable 한 속성을 유지하게 된다.
 
+## 코드로 설명
+1. MyAppState는 State 클래스를 상속 받았고, MyAppState는 State 클래스 타입이 되었다. 그리고 상속받은 State 클래스의 Generic 타입을 MyApp 클래스로 지정을 해준다면, 이 State 클래스는 오직 MyApp 클래스 타입만을 가지게 된다. 이를 통해 Flutter 에게 MyAppState가 MyApp과 연결됨을 알려줄 수 있는 것이다. 
+2. 그렇다면 State 클래스는 왜 Generic 타입을 가지게 되는가?
+- 바로 안정성과 코드의 재사용성 때문이다.
+```dart
+import 'package:flutter/material.dart';
+import 'package:flutter_app_test/ScreenA.dart';
+import 'package:flutter_app_test/ScreenB.dart';
+import 'package:flutter_app_test/ScreenC.dart';
 
+void main() => runApp(const MyApp());
 
+class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() {
+    // TODO: implement createState
+    return MyAppState();
+  }
+}
+
+// MyAppState 는 State 클래스를 상속해야 한다.
+// State 클래스도 material.dart에서 제공하는 것이다.
+class MyAppState extends State<MyApp> {
+  int counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: '/',
+      routes: {
+        '/': (context) => const ScreenA(),
+        '/b': (context) => const ScreenB(),
+        '/c': (context) => const ScreenC(),
+      },
+    );
+  }
+}
+```
 
 
 
