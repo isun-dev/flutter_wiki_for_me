@@ -92,7 +92,9 @@ class MyAppState extends State<MyApp> {
 }
 ```
 
-
+## State 가 변할때
+- State할 때 화면을 리렌더링하려면 build 메소드를 호출해야 하는데, 무조건 버튼을 클릭했다고 해서 build 메소드를 호출하지는 않는다.
+- 그래서 setState() 함수를 사용해야 한다.
 
 
 
