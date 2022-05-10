@@ -143,5 +143,7 @@ void fetchData(String account) {
 ```
 
 ## 정리
-- Future 클래스는 
-
+- Future 클래스는 비동기 작업을 할 때 사용.
+- Future은 일정 소요시간 후에 실제 데이터나 에러를 반환.
+- async 클래스는 await 메소드를 가지고 있음.
+  - await로 선언된 메소드는 응답이 처리될 때까지 대기.
