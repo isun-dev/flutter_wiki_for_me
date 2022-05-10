@@ -34,6 +34,9 @@ void startTask(){
 
 // Duration으로 아래 함수를 원하는 시간만큼 delay 시킬 수 있다.
 void accessData(){
+  
+  String account;
+  
   Duration time = Duration(seconds: 3);
   sleep(time);
 
@@ -45,4 +48,96 @@ void fetchData(){
   String info3 = '잔액은 8500원 입니다.';
   print(info3);
 }
+```
+# Future가 들어간 코드
+```dart
+import 'dart:io';
+
+void main() {
+  showData();
+}
+
+void showData() {
+  startTask();
+  accessData();
+  fetchData();
+}
+
+void startTask() {
+  String info1 = '요청수행 시작';
+  print(info1);
+}
+
+// Duration으로 아래 함수를 원하는 시간만큼 delay 시킬 수 있다.
+void accessData() {
+  Duration time = Duration(seconds: 3);
+
+  if (time.inSeconds > 2) {
+    // sleep(time);
+
+    // 아래와 같은 경우에는, 3초 동안 실행이 중지 되고, fetchData()를 수행하게 된다.
+    // 그 다음 3초 뒤에 Future를 return 하고 아래 코드가 수행이 되고 함수가 종료 된다.
+    Future.delayed(time, () {
+      String info2 = "데이터에 처리 완료";
+      print(info2);
+    });
+  } else {
+    String info2 = "데이터를 가져왔습니다";
+    print(info2);
+  }
+}
+
+void fetchData() {
+  String info3 = '잔액은 8500원 입니다.';
+  print(info3);
+}  
+```
+
+# 어떤 로직이 반드시 수행된 후 그 다음코드가 실행되어야 하는 경우의 예시.
+```dart
+import 'dart:io';
+
+void main() {
+  showData();
+}
+
+void showData() async {
+  startTask();
+  String account = await accessData(); // accessData 함수의 실행이 끝날 때까지 기다리라는 것을 의미.
+  fetchData(account);
+}
+
+void startTask() {
+  String info1 = '요청수행 시작';
+  print(info1);
+}
+
+// Duration으로 아래 함수를 원하는 시간만큼 delay 시킬 수 있다.
+Future<String> accessData() async {
+  String account = '';
+
+  Duration time = Duration(seconds: 3);
+
+  if (time.inSeconds > 2) {
+    // sleep(time);
+    // 아래와 같은 경우에는, 3초 동안 실행이 중지 되고, fetchData()를 수행하게 된다.
+    // 그 다음 3초 뒤에 Future를 return 하고 아래 코드가 수행이 되고 함수가 종료 된다.
+    await Future.delayed(time, () {
+      // await를 붙이게 되면 Future.delayed 함수의 실행 끝날때까지 기다리라는 것을 의미한다.
+      account = "8500";
+      print(account);
+    });
+  } else {
+    String info2 = "데이터를 가져왔습니다";
+    print(info2);
+  }
+
+  return account;
+}
+
+void fetchData(String account) {
+  String info3 = account;
+  print(info3);
+}
+
 ```
