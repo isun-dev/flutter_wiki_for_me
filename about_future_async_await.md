@@ -141,3 +141,7 @@ void fetchData(String account) {
 }
 
 ```
+
+## 정리
+- Future 클래스는 
+
