@@ -11,3 +11,38 @@
   
 # dart:io library
 - File, socket, HTTP, and other I/O => 통신을 위한 라이브러리
+
+# Duration
+- Future를 사용하면 무조건 같이 쓰게 되는 것. 
+```dart
+import 'dart:io';
+
+void main(){
+  showData();
+}
+
+void showData(){
+  startTask();
+  accessData();
+  fetchData();
+}
+
+void startTask(){
+  String info1 = '요청수행 시작';
+  print(info1);
+}
+
+// Duration으로 아래 함수를 원하는 시간만큼 delay 시킬 수 있다.
+void accessData(){
+  Duration time = Duration(seconds: 3);
+  sleep(time);
+
+  String info2 = '데이터에 접속중';
+  print(info2);
+}
+
+void fetchData(){
+  String info3 = '잔액은 8500원 입니다.';
+  print(info3);
+}
+```
