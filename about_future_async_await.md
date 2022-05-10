@@ -9,3 +9,5 @@
 
 ## await => 작업이 처리 될때까지 기다리라는 것을 의미.
   
+# dart:io library
+- File, socket, HTTP, and other I/O => 통신을 위한 라이브러리
