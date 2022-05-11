@@ -33,3 +33,24 @@ void main(){
   print('After the Future'); // 2번
 }
 ```
+
+# Async method를 사용할 경우
+1) 메소드를 통해서 나오는 결과물은 future 이다.
+2) await 키워드를 만날때까지 Synchronous 방식으로 코드 처리를 한다.
+3) await 키워드를 만나면 future가 완료될 때까지 대기한다.
+4) future가 완료 되자마자 그 다음 코드들을 실행한다.
+- 그럼 await 키워드를 만날 때까지 다른 동작의 실행이 중지 되는가?
+- 전혀 그렇지 않다. 
+
+# 실행순서 확인
+![스크린샷 2022-05-11 오후 5 17 23](https://user-images.githubusercontent.com/43905552/167802396-be6a709e-b87b-4ca9-b8d2-fe1517ba13c2.png)
+
+
+
+
+
+
+
+
+
+
