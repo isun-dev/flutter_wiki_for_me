@@ -155,4 +155,4 @@ void fetchData(String account) {
 - 개발자가 Info 클래스를 사용해서 직접 인스턴스를 만드는 것이 아니라, argument를 통해서 json 데이터가 넘어오면, 자기가 알아서 info 클래스의 인스턴스를 생성해서 Return 해주는 역할을 한다.
   
 ## FutureBuilder
-- 
+- 데이터를 다 받아오기 전에, 데이터 없이 그릴 수 있는 부분들을 먼저 그려주기 위해서, 사용된다. 
