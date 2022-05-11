@@ -151,5 +151,8 @@ void fetchData(String account) {
 ## Json 데이터 변환용 라이브러리
 - import 'dart:convert'; 
 
-## Dart Factory
+## Dart의 Factory 생성자
+- 개발자가 Info 클래스를 사용해서 직접 인스턴스를 만드는 것이 아니라, argument를 통해서 json 데이터가 넘어오면, 자기가 알아서 info 클래스의 인스턴스를 생성해서 Return 해주는 역할을 한다.
+  
+## FutureBuilder
 - 
